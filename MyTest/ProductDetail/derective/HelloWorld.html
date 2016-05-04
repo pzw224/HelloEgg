@@ -1,0 +1,16 @@
+﻿<div>
+    a:{{modelBind}}
+    <div ng-transclude></div>
+    <span class="spText">/*******指令******/</span>
+    <div>hello my directive</div>
+
+    <div>{{result.colorText}}</div>
+    <h1>=绑定策略：{{mm}}</h1>
+    <h1>@绑定策略：{{fromName}}</h1>
+    <div>
+        <input type="text" ng-model="helloName" /><label>name</label>
+        <input type="text" ng-model="sex" /><label>sex</label>
+        <input type="button" value="Say Hello" ng-click="onSend({name:helloName,sex:sex})" />
+    </div>
+    <span class="spText">/*******End******/</span>
+</div>

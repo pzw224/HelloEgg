@@ -1,0 +1,279 @@
+﻿a, abbr, acronym, address, applet, big, blockquote, body, caption, cite, code, dd, del, dfn, div, dl, dt, em, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, table, tbody, td, tfoot, th, thead, tr, tt, ul, var {
+    padding: 0px;
+    margin: 0px;
+    font-weight: inherit;
+    font: 13px Helvetica,Arial,sans-serif;
+    color:#333;
+    text-decoration: none;
+    outline: 0px;
+    border: 0px;
+}
+
+ul, li {
+    list-style: none outside none;
+}
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clear {
+    clear: both;
+}
+.clear:after {
+    content: "";
+    clear: both;
+    display: inline-block;
+    height:0px;
+    width:0px;
+}
+
+header {
+    height: 36px;
+    background:#084d23;
+    width:100%;
+}
+
+#membership_bar_logo {
+    width:135px;
+    line-height:36px;
+    background:#146c36;
+    border-radius:0 0 0 3px;
+    position:relative;
+}
+.inner_wrapper {
+    padding:0px 15px;
+}
+    #membership_bar_logo a {
+        color: #fff;
+        font-weight:bolder;
+    }
+        #membership_bar_logo a:hover {
+            text-decoration:underline;
+        }
+        #membership_bar_logo a:link :visited {
+            color:#4d4d4d;
+            text-decoration: none;
+        }
+.membership_logo {
+    background: url(../Images/header/spr_membership.png) no-repeat 0px 0px;
+    width: 75px;
+    height: 19px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    border: none;
+}
+.arrow_background {
+    position:absolute;
+    right:-5px;
+    top:50%;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+    border-left:5px solid #146c36;
+    margin-top:-5px;
+}
+
+.membership_message {
+    height:36px;
+    line-height:36px;
+    padding-left:28px;
+}
+
+    .membership_message a {
+        color:#fff;
+        white-space: nowrap;
+
+    }
+
+        .membership_message a:hover {
+            text-decoration:underline;
+        }
+.membership_bar_message1 {
+    color:#ffc76c;
+    padding:0px 6px;
+}
+
+
+.head {
+    background:#00283a;
+}
+
+.head_main {
+    width:80%;
+    margin:0 auto;
+}
+
+.head .head_inner {
+    position:relative;
+}
+
+.head_logo {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    width: 216px;
+}
+
+.head_logo_img {
+    display:block;
+}
+
+    .head_logo_img img {
+        display: block;
+        position: relative;
+        width: 100%;
+        z-index: 2;
+    }
+
+.head_logo_bg {
+    background: rgba(0, 0, 0, 0) url("http://images10.newegg.com/WebResource/Themes/2005/Nest/header_bg_blue.png") no-repeat scroll center center;
+    display: block;
+    height: 200px;
+    left: 50%;
+    margin: -100px 0 0 -30px;
+    position: absolute;
+    top: 50%;
+    width: 200px;
+}
+
+.nav_bar {
+    height:36px;
+    padding:8px 0 6px;
+    position:relative;
+}
+
+.nav_col {
+    display: table-cell !important;
+    float: none;
+    padding: 0;
+    vertical-align: top;
+}
+
+.btn_group {
+    margin:0 8px;
+}
+
+.btn {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #adadad;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #4d4d4d;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Arial Narrow","Helvetica Narrow",arial,helvetica,sans-serif;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-language-override: normal;
+    font-size: 14px;
+    font-size-adjust: none;
+    font-stretch: condensed;
+    font-style: normal;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    outline: 0 none;
+    padding: 8px 1em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.btn_primary {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #feb13a, #f78c1b) repeat scroll 0 0;
+    border-color: #b35a00;
+    color: #552f00;
+}
+
+.btn_group {
+    font-size:0;
+    white-space: nowrap;
+}
+
+.btn_group_cell {
+    display: inline-block;
+    vertical-align: top;
+    margin:0px;
+}
+
+.btn_group_cell .btn_primary {
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:2.5em;
+}
+
+.btn_group_cell .btn {
+    border-bottom-left-radius: 4px;
+    border-left-width: 1px;
+    border-top-left-radius: 4px;
+}
+
+.search_bar {
+    height:36px;
+    margin:0 8px 0 0;
+    position:relative;
+    top:auto;
+    width:100%;
+}
+
+.seach_input {
+    height:36px;
+    line-height:36px;
+    border:0px;
+    border-bottom-left-radius:4px;
+    border-top-left-radius:4px;
+    padding:0px 10px;
+    min-width:200px;
+}
+
+.search_select {
+    height:36px;
+    line-height:36px;
+    border:0px;
+    border-bottom-right-radius:4px;
+    border-top-right-radius:4px;
+    padding:0px 10px;
+    background:#fff;
+    min-width:200px;
+}
+
+    .search_select select {
+        border:1px solid #ccc;
+        border-radius:4px;
+        padding:2px;
+        width:100%;
+    }
+
+footer {
+    width:100%;
+}
+    footer #footerAwards {
+        padding:20px 0px;
+        text-align:center;
+    }
+
+        footer #footerAwards a {
+            margin:0px 20px;
+        }
+#footer_disclaimer {
+    font-size:11px;
+    text-align:center;
+}
+#footer_disclaimer ul li {
+    display:inline-block;
+    padding: 0 4px;
+}
+
+    #footer_disclaimer li span, a {
+        color: #434649;
+    }
+
+    #footer_disclaimer li a:hover {
+        border-bottom:1px dotted #838689;
+        color:#06f;
+    } 

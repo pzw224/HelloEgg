@@ -1,0 +1,7 @@
+D:\我的项目\MyTest\ServiceImplementation\bin\Debug\ServiceImplementation.dll
+D:\我的项目\MyTest\ServiceImplementation\bin\Debug\ServiceImplementation.pdb
+D:\我的项目\MyTest\ServiceImplementation\obj\Debug\ServiceImplementation.csprojResolveAssemblyReference.cache
+D:\我的项目\MyTest\ServiceImplementation\obj\Debug\ServiceImplementation.dll
+D:\我的项目\MyTest\ServiceImplementation\obj\Debug\ServiceImplementation.pdb
+D:\我的项目\MyTest\ServiceImplementation\bin\Debug\IServiceInterface.dll
+D:\我的项目\MyTest\ServiceImplementation\bin\Debug\IServiceInterface.pdb

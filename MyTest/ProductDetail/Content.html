@@ -1,0 +1,40 @@
+﻿<div>
+    <p>{{name}}</p>
+    <ul>
+        <!-- track by item.id 避免值重复 -->
+        <li ng-repeat="item in array track by $index">{{$index+":"+item}}</li>
+    </ul>
+    <br />
+    <div ng-controller="BindController">
+        <h2 class="yellow">{{"parent:"+$parent.name}}</h2>
+        <div class="clear"></div>
+        <div class="fl" style="width:30%;">
+            factory：
+            <span ng-class="result.colorText">{{result.user.name}}</span>的email：{{result.user.email}}
+        </div>
+        <div class="fl" style="width:30%;">
+            serviceUser：
+            <span ng-class="result.colorText">{{result.serviceUser.name}}</span>的email：{{result.serviceUser.email}}
+        </div>
+        <div class="fl" style="width:30%;">
+            provider：
+            <span ng-class="{'green':'red','red':'blue','gray':'orange'}[result.colorText]">{{result.userProvider.name}}</span>的email：{{result.userProvider.email}},backendUrl:{{result.userProvider.backendUrl}}
+        </div>
+        <div class="clear"></div>
+        <div>
+            <input type="button" value="变色" ng-click="result.changeColor()" />
+        </div>
+        <div>
+            <h1>directive:</h1>
+            <span>=绑定model：</span><input type="text" ng-model="equalModel" />
+            <hr />
+            <hello-world title="products" my-model="equalModel" from-name="fromName({{result.user.name}})" on-send="sayHello(name,'不错',sex)" ><h1>我是E</h1></hello-world>
+            <hr />
+            <div hello-world=products on-send="sayHello(name)"><h1>我是A</h1></div> 
+            <hr />
+            <div class=hello-world:products><h1>我是C</h1></div>
+            <hr />
+            <input type="button" value="向上发布广播" ng-click="emitClick()" />
+        </div>
+    </div>
+</div>

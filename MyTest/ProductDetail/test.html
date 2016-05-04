@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myapp">
+<head>
+    <title>test</title>
+    <style type="text/css">
+        ul li {
+            float: left;
+            width: 100px;
+            height: 30px;
+            list-style: none outside none;
+            cursor: pointer;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+            .clear:after {
+                width: 0;
+                height: 0;
+                display: inline-block;
+                content: "";
+            }
+    </style>
+</head>
+<body>
+    <div ng-controller="MainController">
+        <input type="text" ng-model="a" />
+        <hello-world model-directive="a"></hello-world>
+
+
+
+    </div>
+    <script src="../Scripts/Angularjs/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("myapp", []);
+        app.run(function ($rootScope) {
+            //$rootScope.mydata = "aaaa";
+
+        })
+        .controller("MainController", function ($scope) {
+            //$scope.mydata = "bbb";
+            $scope.yes = angular.isNumber(1);
+            $scope.a = 1;
+        })
+        .controller("childController", function ($scope) {
+            $scope.a = 2;
+            $scope.person = {
+                name: 'aaa',
+                sex: 'nv'
+            };
+
+            $scope.TiJiao = function () {
+                alert($scope.person.name + "," + $scope.person.sex);
+
+
+            }
+        });
+
+
+        app.filter("captitallize", function () {
+            //自定义过滤器
+            return function (input) {
+                if (input) {
+                    //首字母大写
+                    return input[0].toUpperCase() + input.slice(1);
+                }
+            }
+        })
+        .directive("helloWorld", function () {
+            var result = {
+                //A:属性 <div hello-world=products></div> 
+                //E：元素 <hello-world title=products></hello-world>
+                //C：样式类 <div class=hello-world:products></div>
+                //M：注释 <!-- directive:hello-world products -->
+                restrict: 'AECM',
+                //template: "<h3>hello my directive <span ng-transclude></span></h3>",  //指令显示的内容。注意：ng-transclude一定要和transclude配合使用，否则报错
+                templateUrl: '../ProductDetail/derective/HelloWorld.html',
+                transclude: true, //默认为false，设置为true，指令内的元素追加在ng-transclude绑定处
+                replace: true,  //true-模板内容替换指令，false-模板内容追加在指令里
+                scope: {
+                    modelBind:'=modelDirective'
+                },
+                controller: function ($scope) {
+                    $scope.helloName = "摩托";
+                    $scope.sex = "男";
+                    $scope.$watch("helloName", function (newValue, oldValue) {
+                        if ($scope.helloName.length > 0) {
+                            console.log("helloName NewValue:" + newValue + ",oldValue:" + oldValue);
+                        }
+                    })
+                }
+            };
+            return result;
+        })
+    </script>
+</body>
+
+</html>

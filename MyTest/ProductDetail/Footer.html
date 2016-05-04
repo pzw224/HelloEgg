@@ -1,0 +1,18 @@
+﻿<div id="footerAwards">
+    <a ng-repeat="obj in images" href="javascript:void(0);">
+        <img src="{{obj.src}}" alt="{{obj.alt}}" />
+    </a>
+</div>
+<div id="footer_disclaimer">
+    <ul>
+        <li ng-repeat="obj in a_texts">
+            <a href="javascript:void(0);">{{obj.a_text}}</a>
+            <!-- ng-show 命令，判断是否显示 -->
+            <span ng-show="!obj.last">|</span>
+        </li>
+        <li ng-repeat="obj in span_texts">
+            <span>{{obj.span_text | lowercase | captitallize}}</span>
+        </li>
+        <li class="clear"></li>
+    </ul>
+</div>

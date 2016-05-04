@@ -1,0 +1,4 @@
+D:\我的项目\MyTest\IServiceInterface\bin\Debug\IServiceInterface.dll
+D:\我的项目\MyTest\IServiceInterface\bin\Debug\IServiceInterface.pdb
+D:\我的项目\MyTest\IServiceInterface\obj\Debug\IServiceInterface.dll
+D:\我的项目\MyTest\IServiceInterface\obj\Debug\IServiceInterface.pdb

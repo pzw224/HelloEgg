@@ -1,0 +1,45 @@
+﻿<!--Navigation Controller:MainController -->
+<div class="head_main"> 
+    <div class="head_inner">
+        <div class="head_logo">
+            <a class="head_logo_img" href="javascript:void(0);">
+                <img src="http://images10.newegg.com/WebResource/Themes/2005/Nest/us_new_logo.png" />
+            </a>
+            <div class="head_logo_bg"></div>
+        </div>
+        <div class="head_tabs"></div>
+        <nav class="top_nav"></nav>
+    </div>
+    <nav class="nav_bar">
+        <div class="clear">
+            <div class="nav_col">
+                <div class="btn_group">
+                    <nav class="btn_group_cell">
+                        <a href="javascript:void(0)" class="btn btn_primary">{{nav.all | uppercase}}</a>
+                    </nav>
+                    <div class="btn_group_cell">
+                        <a href="javascript:void(0)" class="btn btn_primary">{{nav.deals | uppercase}}</a>
+                    </div>
+                    <nav class="btn_group_cell">
+                        <a href="javascript:void(0)" class="btn btn_primary">{{nav.featured | uppercase}}</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="nav_col">
+                <div class="search_bar clear">
+                    <input type="text" class="seach_input fl" ng-model="keyword" placeholder="Keywords, Model # or Item #" />
+                    <div class="search_select fl">
+                        <select ng-model="selected" ng-options="item.id as item.label group by item.translate for item in selectValues | orderBy : item.id "></select>
+                    </div>
+                    <span style="color:#0ff;height:36px;display:inline-block;line-height:36px;">{{selected}}</span>
+                    <div style="color:#0ff;height:36px;display:inline-block;line-height:36px;" ng-switch on="selected">
+                        <span class="red" ng-switch-when="0">|所有</span>
+                        <span class="red" ng-switch-when="1">|电脑系统</span>
+                        <span class="red" ng-swith-default>|其它</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!--</div>-->

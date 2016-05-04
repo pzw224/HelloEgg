@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myapp">
+<head>
+    <title>product-detail</title>
+    <link href="../Content/common.css" rel="stylesheet" />
+    <link href="../Content/ProductDetail/product.css" rel="stylesheet" />
+</head>
+<body>
+    <header ng-include="'Header.html'"  ng-controller="HeaderController"></header>
+    <div id="main" ng-controller="MainController">
+        <div class="head" ng-include="'Navigation.html'"></div>
+        <div id="content">
+            <div>
+                <input type="button" value="向下发布广播" ng-click="broadClick()" />
+            </div>
+            <span class="spText">/***************子路由************/</span>
+            <div ng-view></div>
+            <span class="spText">/**********end***********/</span>
+        </div>
+        <div>全局变量：{{rootAbsUrl}}</div>
+    </div>
+
+    <footer ng-include="'Footer.html'" ng-controller="FooterController"></footer>
+
+
+    <script src="../Scripts/Angularjs/angular.js"></script>
+    <script src="../Scripts/Angularjs/angular-route.min.js"></script>
+    <script src="../Scripts/Angularjs/ProductDetail/route.js"></script>
+    <script src="../Scripts/Angularjs/ProductDetail/service.js"></script>
+    <script src="../Scripts/Angularjs/ProductDetail/product.js"></script>
+</body>
+</html>

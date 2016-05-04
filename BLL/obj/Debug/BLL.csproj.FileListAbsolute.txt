@@ -1,0 +1,7 @@
+D:\我的项目\MyTest\BLL\bin\Debug\BLL.dll
+D:\我的项目\MyTest\BLL\bin\Debug\BLL.pdb
+D:\我的项目\MyTest\BLL\bin\Debug\IServiceInterface.dll
+D:\我的项目\MyTest\BLL\bin\Debug\IServiceInterface.pdb
+D:\我的项目\MyTest\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\我的项目\MyTest\BLL\obj\Debug\BLL.dll
+D:\我的项目\MyTest\BLL\obj\Debug\BLL.pdb
