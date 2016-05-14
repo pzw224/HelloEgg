@@ -20,6 +20,8 @@ namespace MyTest
             IEnumeratorTest();
             SayHello();
             StructuraEquatable();
+            GetVector();
+            GetDelegate();
         }
 
         #region 泛型
@@ -175,17 +177,17 @@ namespace MyTest
             }
 
             #region 元组比较
-            var t1 = Tuple.Create<int, string>(1,"Stephanie");
+            var t1 = Tuple.Create<int, string>(1, "Stephanie");
             var t2 = Tuple.Create<int, string>(1, "Stephanie");
             if (t1 != t2)
             {
-                txt.Append("not the same reference to the Tuple");
+                txt.Append("<p>not the same reference to the Tuple</p>");
             }
             if (t1.Equals(t2))
             {
-                txt.Append("the same content");
+                txt.Append("<p>the same content</p>");
             }
-            
+
 
             #endregion
 
@@ -193,7 +195,91 @@ namespace MyTest
         }
         #endregion
 
-        
+        #region Vector结构
+        protected void GetVector()
+        {
+            Vector v1, v2, vAdd;
+            v1 = new Vector(1, 2, 3);
+            v2 = new Vector(-6, 9, -4);
+            vAdd = v1 + v2;
+            StringBuilder html = new StringBuilder();
+            html.Append("<ul>");
+            html.AppendFormat("<li>v1:{0}</li>", v1);
+            html.AppendFormat("<li>v2:{0}</li>", v2);
+            html.AppendFormat("<li>vAdd:{0}</li>", vAdd);
+            html.Append("</ul>");
+            main.InnerHtml += html.ToString();
+        }
+        #endregion
+
+        #region 委托
+        delegate double DoubleOp(double value);
+        Action<double, StringBuilder>[] ActionOp;
+        Func<double, double>[] FuncOp;
+        public void GetDelegate()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<div class='clear'>");
+            #region delegate
+            sb.Append("<h1>委托</h1>");
+            sb.Append("<div class='fl'><h2>一个简单的委托</h2>");
+            DoubleOp[] oprations ={
+                                 MathOperation.MultiplyByTwo,
+                                 MathOperation.Square
+                                 };
+            double a = 2.0, b = 7.94, c = 1.414;
+            for (int i = 0; i < oprations.Length; i++)
+            {
+                sb.AppendFormat("<p>Using operations:{0}</p>", i);
+                sb.AppendFormat("<p>Value is {0},result of opration is {1}.</p>", a, ProcessAndDisplayNumber(oprations[i], a));
+                sb.AppendFormat("<p>Value is {0},result of opration is {1}.</p>", b, ProcessAndDisplayNumber(oprations[i], b));
+                sb.AppendFormat("<p>Value is {0},result of opration is {1}.</p>", c, ProcessAndDisplayNumber(oprations[i], c));
+            }
+            sb.Append("</div>");
+            #endregion
+            #region Action<T,T1,T2> 无返回值
+            sb.Append("<div class='fl'><h2>Action委托</h2>");
+            ActionOp = new Action<double, StringBuilder>[]
+            {
+                MathOperation.ActMultiplyByTwo,
+                MathOperation.ActSquare
+            };
+            for (int i = 0; i < ActionOp.Length; i++)
+            {
+                sb.AppendFormat("<p>Using operations:{0}</p>", i);
+                ActionOp[i](a, sb);
+                ActionOp[i](b, sb);
+                ActionOp[i](c, sb);
+            }
+            sb.Append("</div>");
+            #endregion
+            #region Func<T,T1,TResult> TResult为返回类型 
+            sb.Append("<div class='fl'><h2>Func委托</h2>");
+            FuncOp = new Func<double, double>[]
+            {
+                MathOperation.MultiplyByTwo,
+                MathOperation.Square
+            };
+            for (int i = 0; i < FuncOp.Length; i++)
+            {
+                sb.AppendFormat("<p>Using operations:{0}</p>", i);
+                sb.AppendFormat("<p>Value is {0},result of opration is {1}.</p>", a, FuncOp[i](a));
+                sb.AppendFormat("<p>Value is {0},result of opration is {1}.</p>", b, FuncOp[i](b));
+                sb.AppendFormat("<p>Value is {0},result of opration is {1}.</p>", c, FuncOp[i](c));
+            }
+            sb.Append("</div>");
+            #endregion
+
+            sb.Append("</div>");
+            main.InnerHtml += sb.ToString();
+        }
+
+        private double ProcessAndDisplayNumber(DoubleOp action, double value)
+        {
+            double result = action(value);
+            return result;
+        }
+        #endregion
     }
 
     #region 泛型接口
@@ -395,7 +481,7 @@ namespace MyTest
 
         public override int GetHashCode()
         {
- 	        return Id.GetHashCode();
+            return Id.GetHashCode();
         }
 
         public override bool Equals(object obj)
@@ -412,6 +498,65 @@ namespace MyTest
                 return base.Equals(other);
             }
             return this.Id == other.Id && this.FirstName == other.FirstName && this.LastName == other.LastName;
+        }
+    }
+    #endregion
+
+    #region Vector结构
+    struct Vector
+    {
+        public double x, y, z;
+
+        public Vector(double x, double y, double z)
+        {
+            this.x = x; this.y = y; this.z = z;
+        }
+
+        public Vector(Vector rhs)
+        {
+            this.x = rhs.x; this.y = rhs.y; this.z = rhs.z;
+        }
+
+        public override string ToString()
+        {
+            return "（" + x + "," + y + "," + z + ")";
+        }
+
+        /// <summary>
+        /// operator用于申明运算符
+        /// </summary>
+        public static Vector operator +(Vector lhs, Vector rhs)
+        {
+            Vector result = new Vector(lhs);
+            result.x += rhs.x;
+            result.y += rhs.y;
+            result.z += rhs.z;
+            return result;
+        }
+    }
+    #endregion
+
+    #region 委托
+    class MathOperation
+    {
+        public static double MultiplyByTwo(double value)
+        {
+            return value * 2;
+        }
+
+        public static double Square(double value)
+        {
+            return value * value;
+        }
+
+        public static void ActMultiplyByTwo(double value, StringBuilder sb)
+        {
+            sb.AppendFormat("<p>Value is {0},result of opration is {1}.</p>", value, value * 2);
+        }
+
+        public static void ActSquare(double value, StringBuilder sb)
+        {
+            sb.AppendFormat("<p>Value is {0},result of opration is {1}.</p>", value, value * value);
         }
     }
     #endregion
