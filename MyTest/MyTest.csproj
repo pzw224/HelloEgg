@@ -205,6 +205,7 @@
     <Content Include="html5\css\main.css" />
     <Content Include="html5\HelloPayne.html" />
     <Content Include="html5\image\skull.jpg" />
+    <Content Include="html5\js\greeter.js" />
     <Content Include="html5\js\main.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
