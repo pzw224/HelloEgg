@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
 using System.Collections;
+using System.IO;
 
 namespace MyTest
 {
@@ -22,6 +23,7 @@ namespace MyTest
             StructuraEquatable();
             GetVector();
             GetDelegate();
+            MyLambda();
         }
 
         #region 泛型
@@ -253,7 +255,7 @@ namespace MyTest
             }
             sb.Append("</div>");
             #endregion
-            #region Func<T,T1,TResult> TResult为返回类型 
+            #region Func<T,T1,TResult> TResult为返回类型
             sb.Append("<div class='fl'><h2>Func委托</h2>");
             FuncOp = new Func<double, double>[]
             {
@@ -280,6 +282,25 @@ namespace MyTest
             return result;
         }
         #endregion
+
+        #region lambda表达式
+        public void MyLambda()
+        {
+            string mid = ", middle part,";
+            Func<string, string> lambda = param =>
+            {
+                param += mid;
+                param += " and this was added to the string";
+                return param;
+            };
+            lblLambda.Text = lambda("start of string");
+        }
+        #endregion
+
+        #region 事件
+
+        #endregion
+
     }
 
     #region 泛型接口
@@ -559,5 +580,9 @@ namespace MyTest
             sb.AppendFormat("<p>Value is {0},result of opration is {1}.</p>", value, value * value);
         }
     }
+    #endregion
+
+    #region 事件
+
     #endregion
 }

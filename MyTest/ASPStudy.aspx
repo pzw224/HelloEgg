@@ -12,6 +12,12 @@
     <div id="main" runat="server">
     
     </div>
+    <div id="main2" runat="server">
+        <h2>Lambda表达式</h2>
+        <asp:Label ID="lblLambda" runat="server"></asp:Label>
+        <h2>事件</h2>
+        <p id="myEvent" runat="server"></p>
+    </div>
     </form>
 </body>
 </html>

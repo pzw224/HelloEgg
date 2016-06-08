@@ -5,7 +5,26 @@
     <title>Hello My First HTML5</title>
     <link href="css/main.css" rel="stylesheet" />
     <script src="../Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        var abc = (function () {
+            var res = {};
+            var _instance = null;
+            res.typeName = "ImageGallery";
+            res.constructor = function () {
+                console.log(this.typeName);
+                console.log(res.typeName);
+            };
+            res.show = function () {
+                console.log("pzw" + this.typeName);
+                if (_instance == null) {
+                    _instance = { config: { currentItem: "abc" } };
+                }
+            }
+            return res;
+        }());
+        abc.show();
 
+    </script>
 </head>
 <body>
     <article>
@@ -31,6 +50,9 @@ iPhone 6s is powered by the custom-designed 64-bit A9 chip - delivers <mark>70%<
             <span class="clear"></span>
             <p>纲要转义：<a href="https://gsnedders.html5.org/outliner/">https://gsnedders.html5.org/outliner/</a></p>
             <p><<code>section</code>>是区域块，顶层标题不会新建区域块，以下标题皆会新建区域块，碰到<<code>aside</code>>闭合</p>
+            <div>
+                <input type="button" id="btnShow" value="点我" onclick="abc.show();" />
+            </div>
         </div>
     </article>
     <div id="FatFooter">

@@ -11,6 +11,11 @@ h1 {
     font-weight: bolder;
 }
 
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 ul, li {
     list-style: none outside none;
 }
