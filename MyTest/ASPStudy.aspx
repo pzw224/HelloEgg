@@ -6,6 +6,9 @@
 <head runat="server">
     <title>c#高级编程</title>
     <link href="html5/css/main.css" rel="stylesheet" />
+    <script type="text/javascript">
+        var a = { abc: 'I\'m very happy' };
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">

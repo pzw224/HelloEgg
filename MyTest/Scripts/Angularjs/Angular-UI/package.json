@@ -1,0 +1,15 @@
+{
+  "name": "angular.ui",
+  "version": "1.0.0",
+  "description": "it's my test project",
+  "main": "index.js",
+  "dependencies": {
+    "angular-ui-bootstrap": "^1.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
