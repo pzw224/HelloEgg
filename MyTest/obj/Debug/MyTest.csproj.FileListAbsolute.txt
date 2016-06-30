@@ -96,4 +96,3 @@ D:\我的项目\HelloEgg\MyTest\bin\DotNetOpenAuth.AspNet.xml
 D:\我的项目\HelloEgg\MyTest\obj\Debug\MyTest.csprojResolveAssemblyReference.cache
 D:\我的项目\HelloEgg\MyTest\obj\Debug\MyTest.dll
 D:\我的项目\HelloEgg\MyTest\obj\Debug\MyTest.pdb
-D:\我的项目\HelloEgg\MyTest\bin\MyTest.dll.config

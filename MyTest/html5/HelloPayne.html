@@ -24,6 +24,70 @@
         }());
         abc.show();
 
+
+        //Function扩展类型
+        Function.prototype.method = function (name, func) {
+            this.prototype[name] = func;
+            return this;
+        }
+
+        Number.method("interger", function () {
+            return Math[this < 0 ? 'ceil' : 'floor'](this);
+        });
+
+        String.method("trim",
+            function () {
+                return this.replace(/^\s+|\s+$/g,'');//首位去空格
+            }).method("encode",
+            function () {
+                return encodeURI(this);
+            });
+
+        $(function () {
+            $("#funcTest").append((-5.5).interger()+"。");
+            $("#funcTest1").append((5.8).interger());
+
+
+            var aaa = function (name) {
+                this.name = name;
+            }
+
+            aaa.method("square", function (x) { return x * x; });
+
+            var bbb = new aaa("123");
+            console.log(bbb.square(3));
+            console.log(" 123<p>p屁<p>".trim().encode());
+
+
+
+            Function.prototype.fuc = function () {
+                console.log("fuc");
+            }
+            /*这个为什么能调用？*/
+            Function.fuc();
+
+            man = function (name) {
+                this.name = name;
+            }
+            man.prototype.protoFun = function () {
+                alert("this is protoFun");
+            }
+            /*类方法*/
+            man.fun = function () {
+                alert("this is fun");
+            }
+
+            /*实例继承了prototype*/
+            var pzw = new man("pzw");
+
+            /*
+                错
+                man.protoFun();
+                错
+                pzw.fun();
+            */
+            
+        })
     </script>
 </head>
 <body>
@@ -52,8 +116,10 @@ iPhone 6s is powered by the custom-designed 64-bit A9 chip - delivers <mark>70%<
             <p><<code>section</code>>是区域块，顶层标题不会新建区域块，以下标题皆会新建区域块，碰到<<code>aside</code>>闭合</p>
             <div>
                 <input type="button" id="btnShow" value="点我" onclick="abc.show();" />
+                <p>-5.5取整：<span id="funcTest"></span>5.8取整：<span id="funcTest1"></span></p>
             </div>
         </div>
+            <div><span style="margin-right:10px;">10</span><span>20</span></div>
     </article>
     <div id="FatFooter">
         <footer>
@@ -66,9 +132,11 @@ iPhone 6s is powered by the custom-designed 64-bit A9 chip - delivers <mark>70%<
                     <code>tsc greeter.ts</code>
                 </p>
                 <span id="sp_typeDom"></span>
+
             </address>
         </footer>
     </div>
+
     <script src="js/main.js"></script>
     <!-- typeScript -->
     <script src="js/greeter.js"></script>
