@@ -1,0 +1,5 @@
+D:\我的项目\HelloEgg\Business\bin\Debug\Business.dll
+D:\我的项目\HelloEgg\Business\bin\Debug\Business.pdb
+D:\我的项目\HelloEgg\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+D:\我的项目\HelloEgg\Business\obj\Debug\Business.dll
+D:\我的项目\HelloEgg\Business\obj\Debug\Business.pdb

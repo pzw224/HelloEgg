@@ -1,0 +1,9 @@
+D:\我的项目\HelloEgg\DAL\bin\Debug\DAL.dll
+D:\我的项目\HelloEgg\DAL\bin\Debug\DAL.pdb
+D:\我的项目\HelloEgg\DAL\bin\Debug\Model.dll
+D:\我的项目\HelloEgg\DAL\bin\Debug\EntityFramework.dll
+D:\我的项目\HelloEgg\DAL\bin\Debug\Model.pdb
+D:\我的项目\HelloEgg\DAL\bin\Debug\EntityFramework.xml
+D:\我的项目\HelloEgg\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\我的项目\HelloEgg\DAL\obj\Debug\DAL.dll
+D:\我的项目\HelloEgg\DAL\obj\Debug\DAL.pdb

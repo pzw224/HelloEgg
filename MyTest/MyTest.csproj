@@ -203,6 +203,38 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="DFIS\.gitignore" />
+    <Content Include="DFIS\app.html" />
+    <Content Include="DFIS\app.js" />
+    <Content Include="DFIS\app\query-by-id2\app.js" />
+    <Content Include="DFIS\app\query-by-id2\index.html" />
+    <Content Include="DFIS\app\query-by-id\app.js" />
+    <Content Include="DFIS\app\query-by-id\demo.html" />
+    <Content Include="DFIS\app\query-by-id\index.html" />
+    <Content Include="DFIS\app\query-portal2\app.js" />
+    <Content Include="DFIS\app\query-portal2\index.html" />
+    <Content Include="DFIS\app\query-portal\app.js" />
+    <Content Include="DFIS\app\query-portal\index.html" />
+    <Content Include="DFIS\css\bizlog.css" />
+    <Content Include="DFIS\directives\negJsonViewer.js" />
+    <Content Include="DFIS\directives\negJsonViewer2.js" />
+    <Content Include="DFIS\filters\color.js" />
+    <Content Include="DFIS\filters\enable.js" />
+    <Content Include="DFIS\filters\icon.js" />
+    <Content Include="DFIS\filters\timeColor.js" />
+    <Content Include="DFIS\filters\timeIcon.js" />
+    <Content Include="DFIS\l18n\en-us.js" />
+    <Content Include="DFIS\l18n\zh-cn.js" />
+    <Content Include="DFIS\l18n\zh-tw.js" />
+    <Content Include="DFIS\resources\images\green-line.png" />
+    <Content Include="DFIS\resources\images\line.png" />
+    <Content Include="DFIS\resources\images\server_status.png" />
+    <Content Include="DFIS\resources\images\volumes.png" />
+    <Content Include="DFIS\resources\images\write.png" />
+    <Content Include="DFIS\services\biz-event-log.js" />
+    <Content Include="DFIS\services\biz-event-log2.js" />
+    <Content Include="DFIS\services\ng-json.js" />
+    <Content Include="DFIS\services\ng-json2.js" />
     <Content Include="html5\css\main.css" />
     <Content Include="html5\HelloPayne.html" />
     <Content Include="html5\image\skull.jpg" />
@@ -1965,6 +1997,28 @@
     <Content Include="Scripts\Gulp\node_modules\yargs\package.json" />
     <Content Include="Scripts\Gulp\node_modules\yargs\README.md" />
     <Content Include="Scripts\Gulp\package.json" />
+    <Content Include="DFIS\.git\config" />
+    <Content Include="DFIS\.git\description" />
+    <Content Include="DFIS\.git\HEAD" />
+    <Content Include="DFIS\.git\hooks\applypatch-msg.sample" />
+    <Content Include="DFIS\.git\hooks\commit-msg.sample" />
+    <Content Include="DFIS\.git\hooks\post-update.sample" />
+    <Content Include="DFIS\.git\hooks\pre-applypatch.sample" />
+    <Content Include="DFIS\.git\hooks\pre-commit.sample" />
+    <Content Include="DFIS\.git\hooks\pre-push.sample" />
+    <Content Include="DFIS\.git\hooks\pre-rebase.sample" />
+    <Content Include="DFIS\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="DFIS\.git\hooks\update.sample" />
+    <Content Include="DFIS\.git\index" />
+    <Content Include="DFIS\.git\info\exclude" />
+    <Content Include="DFIS\.git\logs\HEAD" />
+    <Content Include="DFIS\.git\logs\refs\heads\master" />
+    <Content Include="DFIS\.git\logs\refs\remotes\origin\HEAD" />
+    <Content Include="DFIS\.git\objects\pack\pack-23a78dd598e717711fbb07b29c8ca5b24629d26a.idx" />
+    <Content Include="DFIS\.git\objects\pack\pack-23a78dd598e717711fbb07b29c8ca5b24629d26a.pack" />
+    <Content Include="DFIS\.git\packed-refs" />
+    <Content Include="DFIS\.git\refs\heads\master" />
+    <Content Include="DFIS\.git\refs\remotes\origin\HEAD" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="ProductDetail\Content.html" />
     <Content Include="ProductDetail\derective\HelloWorld.html" />
@@ -2152,6 +2206,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DFIS\.git\objects\info\" />
+    <Folder Include="DFIS\.git\refs\tags\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />

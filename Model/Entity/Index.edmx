@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MyDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BaseData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TypeText" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Passwords" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Others" Type="xml" Nullable="false" />
+          <Property Name="IsDelete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAuthor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="AuthorID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__UserAutho__Autho__1ED998B2">
+          <End Role="BaseData" Type="Self.BaseData" Multiplicity="1" />
+          <End Role="UserAuthor" Type="Self.UserAuthor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BaseData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserAuthor">
+              <PropertyRef Name="AuthorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserAutho__UserI__1DE57479">
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+          <End Role="UserAuthor" Type="Self.UserAuthor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserAuthor">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MyDataBaseModelStoreContainer">
+          <EntitySet Name="BaseData" EntityType="Self.BaseData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAuthor" EntityType="Self.UserAuthor" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__UserAutho__Autho__1ED998B2" Association="Self.FK__UserAutho__Autho__1ED998B2">
+            <End Role="BaseData" EntitySet="BaseData" />
+            <End Role="UserAuthor" EntitySet="UserAuthor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserAutho__UserI__1DE57479" Association="Self.FK__UserAutho__UserI__1DE57479">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="UserAuthor" EntitySet="UserAuthor" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MyDataBaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BaseData" EntityType="MyDataBaseModel.BaseData" />
+          <EntitySet Name="UserAccount" EntityType="MyDataBaseModel.UserAccount" />
+          <EntitySet Name="UserAuthor" EntityType="MyDataBaseModel.UserAuthor" />
+          <AssociationSet Name="FK__UserAutho__Autho__1ED998B2" Association="MyDataBaseModel.FK__UserAutho__Autho__1ED998B2">
+            <End Role="BaseData" EntitySet="BaseData" />
+            <End Role="UserAuthor" EntitySet="UserAuthor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserAutho__UserI__1DE57479" Association="MyDataBaseModel.FK__UserAutho__UserI__1DE57479">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="UserAuthor" EntitySet="UserAuthor" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BaseData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TypeText" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserAuthor" Relationship="MyDataBaseModel.FK__UserAutho__Autho__1ED998B2" FromRole="BaseData" ToRole="UserAuthor" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Passwords" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Others" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserAuthor" Relationship="MyDataBaseModel.FK__UserAutho__UserI__1DE57479" FromRole="UserAccount" ToRole="UserAuthor" />
+        </EntityType>
+        <EntityType Name="UserAuthor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="AuthorID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BaseData" Relationship="MyDataBaseModel.FK__UserAutho__Autho__1ED998B2" FromRole="UserAuthor" ToRole="BaseData" />
+          <NavigationProperty Name="UserAccount" Relationship="MyDataBaseModel.FK__UserAutho__UserI__1DE57479" FromRole="UserAuthor" ToRole="UserAccount" />
+        </EntityType>
+        <Association Name="FK__UserAutho__Autho__1ED998B2">
+          <End Type="MyDataBaseModel.BaseData" Role="BaseData" Multiplicity="1" />
+          <End Type="MyDataBaseModel.UserAuthor" Role="UserAuthor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BaseData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserAuthor">
+              <PropertyRef Name="AuthorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserAutho__UserI__1DE57479">
+          <End Type="MyDataBaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="MyDataBaseModel.UserAuthor" Role="UserAuthor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserAuthor">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyDataBaseModelStoreContainer" CdmEntityContainer="MyDataBaseEntities">
+          <EntitySetMapping Name="BaseData">
+            <EntityTypeMapping TypeName="MyDataBaseModel.BaseData">
+              <MappingFragment StoreEntitySet="BaseData">
+                <ScalarProperty Name="TypeText" ColumnName="TypeText" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccount">
+            <EntityTypeMapping TypeName="MyDataBaseModel.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="Others" ColumnName="Others" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Passwords" ColumnName="Passwords" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAuthor">
+            <EntityTypeMapping TypeName="MyDataBaseModel.UserAuthor">
+              <MappingFragment StoreEntitySet="UserAuthor">
+                <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

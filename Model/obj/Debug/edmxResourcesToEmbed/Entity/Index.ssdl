@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BaseData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentId" Type="int" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TypeText" Type="varchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Passwords" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="Others" Type="xml" Nullable="false" />
+    <Property Name="IsDelete" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserAuthor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="AuthorID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__UserAutho__Autho__1ED998B2">
+    <End Role="BaseData" Type="Self.BaseData" Multiplicity="1" />
+    <End Role="UserAuthor" Type="Self.UserAuthor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaseData">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserAuthor">
+        <PropertyRef Name="AuthorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserAutho__UserI__1DE57479">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="UserAuthor" Type="Self.UserAuthor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserAuthor">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyDataBaseModelStoreContainer">
+    <EntitySet Name="BaseData" EntityType="Self.BaseData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAuthor" EntityType="Self.UserAuthor" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__UserAutho__Autho__1ED998B2" Association="Self.FK__UserAutho__Autho__1ED998B2">
+      <End Role="BaseData" EntitySet="BaseData" />
+      <End Role="UserAuthor" EntitySet="UserAuthor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserAutho__UserI__1DE57479" Association="Self.FK__UserAutho__UserI__1DE57479">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="UserAuthor" EntitySet="UserAuthor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -28,6 +28,28 @@ namespace MyTest
             lily = new Lily(container.Resolve<IKiss>());
             Response.Write(lily.Kiss());
 
+
+            List<Banana> nameList = new List<Banana>();
+            nameList.Add(new Banana() { Index = 0, Name = "零" });
+            nameList.Add(new Banana() { Index = 1, Name = "一" });
+            nameList.Add(new Banana() { Index = 2, Name = "二" });
+            nameList.Add(new Banana() { Index = 3, Name = "三" });
+            nameList.Add(new Banana() { Index = 4, Name = "四" });
+            nameList.Add(new Banana() { Index = 5, Name = "五" });
+            nameList.Add(new Banana() { Index = 6, Name = "六" });
+            List<Banana> result= nameList.FindAll(Compare);
+            foreach (var item in result)
+            {
+                Response.Write(item.Name);
+            }
+            
+
+        }
+
+
+        protected bool Compare(Banana a)
+        {
+            return a.Index > 3;
         }
     }
 
@@ -67,6 +89,21 @@ namespace MyTest
         public string Kiss()
         {
             return GRANDFATHER + "kissing";
+        }
+    }
+
+    public class Banana
+    {
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        public int Index
+        {
+            get;
+            set;
         }
     }
 

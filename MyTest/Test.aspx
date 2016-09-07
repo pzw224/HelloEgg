@@ -18,6 +18,7 @@
         <div>
             <%= SendEmail %>
         </div>
+        <embed type="application/x-shockwave-flash" src="http://images10.newegg.com/WebResource/Themes/2005/Nest/genericspin371.swf" width="660" height="535" style="undefined" id="integratedViewerLoader_spin" name="integratedViewerLoader_spin" quality="high" wmode="transparent" flashvars="serverUrl=http://images17.newegg.com/is/image/&amp;contentRoot=http://images10.newegg.com/WebResource/Themes/2005/Nest&amp;image=newegg/13-132-565-RS&amp;skin=spinSliderFG371_2.swf,spinSliderBG_2.swf">
     </form>
 </body>
 

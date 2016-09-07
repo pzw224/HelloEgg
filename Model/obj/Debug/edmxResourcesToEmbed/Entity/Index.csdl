@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MyDataBaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BaseData" EntityType="MyDataBaseModel.BaseData" />
+    <EntitySet Name="UserAccount" EntityType="MyDataBaseModel.UserAccount" />
+    <EntitySet Name="UserAuthor" EntityType="MyDataBaseModel.UserAuthor" />
+    <AssociationSet Name="FK__UserAutho__Autho__1ED998B2" Association="MyDataBaseModel.FK__UserAutho__Autho__1ED998B2">
+      <End Role="BaseData" EntitySet="BaseData" />
+      <End Role="UserAuthor" EntitySet="UserAuthor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserAutho__UserI__1DE57479" Association="MyDataBaseModel.FK__UserAutho__UserI__1DE57479">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="UserAuthor" EntitySet="UserAuthor" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BaseData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentId" Type="Int32" Nullable="false" />
+    <Property Name="TypeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TypeText" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UserAuthor" Relationship="MyDataBaseModel.FK__UserAutho__Autho__1ED998B2" FromRole="BaseData" ToRole="UserAuthor" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Passwords" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Others" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDelete" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UserAuthor" Relationship="MyDataBaseModel.FK__UserAutho__UserI__1DE57479" FromRole="UserAccount" ToRole="UserAuthor" />
+  </EntityType>
+  <EntityType Name="UserAuthor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="AuthorID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BaseData" Relationship="MyDataBaseModel.FK__UserAutho__Autho__1ED998B2" FromRole="UserAuthor" ToRole="BaseData" />
+    <NavigationProperty Name="UserAccount" Relationship="MyDataBaseModel.FK__UserAutho__UserI__1DE57479" FromRole="UserAuthor" ToRole="UserAccount" />
+  </EntityType>
+  <Association Name="FK__UserAutho__Autho__1ED998B2">
+    <End Type="MyDataBaseModel.BaseData" Role="BaseData" Multiplicity="1" />
+    <End Type="MyDataBaseModel.UserAuthor" Role="UserAuthor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaseData">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserAuthor">
+        <PropertyRef Name="AuthorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserAutho__UserI__1DE57479">
+    <End Type="MyDataBaseModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+    <End Type="MyDataBaseModel.UserAuthor" Role="UserAuthor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserAuthor">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

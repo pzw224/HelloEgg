@@ -28,7 +28,9 @@
         <input type="text" ng-model="a" />
         <hello-world model-directive="a"></hello-world>
 
-
+        <ul>
+            <li ng-repeat="i in dataSource |filter:a">{{i.name}}</li>
+        </ul>
 
     </div>
     <script src="../Scripts/Angularjs/angular.js"></script>
@@ -42,6 +44,8 @@
             //$scope.mydata = "bbb";
             $scope.yes = angular.isNumber(1);
             $scope.a = 1;
+
+            $scope.dataSource = [{id:0,name:'zs'}, {id:1,name:'ls'}, {id:2,name:'ww'}];
         })
         .controller("childController", function ($scope) {
             $scope.a = 2;

@@ -1,0 +1,10 @@
+D:\我的项目\HelloEgg\Model\bin\Debug\Model.dll.config
+D:\我的项目\HelloEgg\Model\bin\Debug\Model.dll
+D:\我的项目\HelloEgg\Model\bin\Debug\Model.pdb
+D:\我的项目\HelloEgg\Model\bin\Debug\EntityFramework.dll
+D:\我的项目\HelloEgg\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\我的项目\HelloEgg\Model\bin\Debug\EntityFramework.xml
+D:\我的项目\HelloEgg\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\我的项目\HelloEgg\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\我的项目\HelloEgg\Model\obj\Debug\Model.dll
+D:\我的项目\HelloEgg\Model\obj\Debug\Model.pdb
