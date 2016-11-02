@@ -189,8 +189,6 @@ namespace MyTest
             {
                 txt.Append("<p>the same content</p>");
             }
-
-
             #endregion
 
             main.InnerHtml += txt.ToString();
@@ -298,7 +296,7 @@ namespace MyTest
         #endregion
 
         #region 事件
-        
+
         #endregion
 
     }

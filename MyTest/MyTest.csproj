@@ -1169,6 +1169,9 @@
     <Content Include="Scripts\Gulp\node_modules\yargs\lib\validation.js" />
     <Content Include="Scripts\Gulp\node_modules\yargs\node_modules\camelcase\index.js" />
     <Content Include="test\AnchorLocation.html" />
+    <Content Include="userAnalysis\1.gif" />
+    <Content Include="userAnalysis\index.html" />
+    <Content Include="userAnalysis\ma.js" />
     <Content Include="XmlToObject.aspx" />
     <Content Include="Scripts\Angularjs\Angular-UI\node_modules\angular-ui-bootstrap\CHANGELOG.md" />
     <Content Include="Scripts\Angularjs\Angular-UI\node_modules\angular-ui-bootstrap\LICENSE" />
