@@ -10,5 +10,5 @@
     //拼接参数串 
     var args = ''; for (var i in params) { if (args != '') { args += '&'; } args += i + '=' + encodeURIComponent(params[i]); }
     //通过Image对象请求后端脚本
-    var img = new Image(1, 1); img.src = 'http://localhost:55427/userAnalysis/1.gif?' + args;
+    var img = new Image(1, 1); img.src = 'http://localhost:8086/1.gif?' + args;
 })();
