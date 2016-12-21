@@ -4,3 +4,8 @@
 ##斜体
 *hello egg*
 ***
+
+```
+  /*高亮*/
+  console.log("Hello Egg");
+```
