@@ -235,6 +235,9 @@
     <Content Include="DFIS\services\biz-event-log2.js" />
     <Content Include="DFIS\services\ng-json.js" />
     <Content Include="DFIS\services\ng-json2.js" />
+    <Content Include="DotNetQuestion\Redirect302\A.aspx" />
+    <Content Include="DotNetQuestion\Redirect302\B.aspx" />
+    <Content Include="DotNetQuestion\Redirect302\Redirect302.aspx" />
     <Content Include="html5\css\main.css" />
     <Content Include="html5\HelloPayne.html" />
     <Content Include="html5\image\skull.jpg" />
@@ -2180,6 +2183,27 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DotNetQuestion\Redirect302\A.aspx.cs">
+      <DependentUpon>A.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DotNetQuestion\Redirect302\A.aspx.designer.cs">
+      <DependentUpon>A.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DotNetQuestion\Redirect302\B.aspx.cs">
+      <DependentUpon>B.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DotNetQuestion\Redirect302\B.aspx.designer.cs">
+      <DependentUpon>B.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DotNetQuestion\Redirect302\Redirect302.aspx.cs">
+      <DependentUpon>Redirect302.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DotNetQuestion\Redirect302\Redirect302.aspx.designer.cs">
+      <DependentUpon>Redirect302.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
